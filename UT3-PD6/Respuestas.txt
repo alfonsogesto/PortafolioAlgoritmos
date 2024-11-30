@@ -1,0 +1,33 @@
+1.Descargar el archivo “suc1.txt”, guardarlo en el directorio raíz de su implementación como “sucursales.txt” yejecutar el programa, emitiendo por consola la cantidad de elementos y la lista de ciudades contenida en la
+estructura. La cantidad de elementos es:
+a) 104
+b) 105
+c) 106
+d) 107
+
+Respuesta: 107
+
+2. Eliminar la ciudad “Chicago”- listar nuevamente el conjunto de sucursales. Dada la ciudad ·“Hong Kong”, la
+que le sigue en la lista es la ciudad ….
+a) Buenos Aires
+b) Tokio
+c) Shenzhen
+d) Cleveland
+
+Respuesta:
+c) Shenzhen
+
+3. Levantar un segundo archivo, “suc2.txt”. Eliminar las ciudades “Shenzen” y “Tokio”. Se cumple lo siguiente:
+a) Quedan 5 ciudades
+b) Queda 1 ciudad y da error de ejecución
+c) Queda vacía y da error de ejecución
+d) Ninguna de las anteriores
+
+Respuesta:
+b) QUeda 1 ciudad y da error de ejecución
+
+4. Levantar un tercer archivo, “suc3.txt”. Invocar al método “Imprimir(“;_”)”. El resultado de esta operación es:
+Caracas;_Tulsa;_Mobile;_Vancouver;_ Montreal;_ >>>Falsa
+Montreal;_Caracas;_Tulsa;_Mobile;_Vancouver >>>Verdadera
+Montreal;_ Tulsa;_ Caracas;_Mobile;_Vancouver;_ >>>Falsa
+Montreal;_Caracas;_Tulsa;_Mobile;_Vancouver;_ >>>Verdadera 
