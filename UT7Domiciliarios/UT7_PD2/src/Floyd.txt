@@ -1,0 +1,41 @@
+  public Double[][] floyd() {
+        int n = vertices.size();
+        Double[][] matrizCaminosMasCortos = new Double[n][n];
+
+        //Almacenamos las claves de los vértices para así acceder a la clave i y j
+        List<Comparable> etiquetasVertices = new ArrayList<>(vertices.keySet());
+
+        //FORMAMOS LA MATRIZ
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                if(i == j) { //El vértice de origen y el vértice de destino son los mismos, por ende el camino tiene costo 0.
+                   matrizCaminosMasCortos[i][j] = 0.0;
+                } else{
+                    //Obtenemos los costos de las aristas
+                    TVertice verticeOrigen = vertices.get(etiquetasVertices.get(i));
+                    TVertice verticeDestino = vertices.get(etiquetasVertices.get(j));
+                    Double costoArista = verticeOrigen.obtenerCostoAdyacencia(verticeDestino);
+
+                    //Existe una arista directa
+                    if(costoArista != Double.MAX_VALUE) {
+                        matrizCaminosMasCortos[i][j] = costoArista;
+                    } else {
+                        matrizCaminosMasCortos[i][j] = INFINITO;
+                    }
+                }
+            }
+        }
+        //ALGORITMO DE FLOYD-WARSHALL
+
+        for(int k = 0; k < n; k++) {
+            for(int i = 0; i < n; i++) {
+                for(int j = 0; j < n; j++) {
+                    if((matrizCaminosMasCortos[i][k] + matrizCaminosMasCortos[k][j]) < matrizCaminosMasCortos[i][j]) {
+                        matrizCaminosMasCortos[i][j] = matrizCaminosMasCortos[i][k] + matrizCaminosMasCortos[k][j];
+                    }
+                }
+            }
+        }
+
+        return matrizCaminosMasCortos;
+    }
