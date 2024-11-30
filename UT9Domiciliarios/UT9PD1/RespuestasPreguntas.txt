@@ -1,0 +1,34 @@
+¿Cómo se genera un vector monótonamente ascendente?
+
+El vector monotonamente ascendiente se genera mediante el método generarDatosAscendentes(int tamanio). 
+Este metodo crea un array del tamaño especificado por el parámetro "tamanio", y a cada elemento del array le asigna un valor igual al 
+índice actual. De esta forma, el array va desde 0 hasta tamanio - 1.
+
+¿Cómo se genera un vector monótonamente descendente?
+
+El vector monotonamente descendente se genera mediante el metodo generarDatosDescendentes(int tamanio). Este metodo crea un array del 
+tamaño especificado por el parámetro "tamanio", y a cada posición del array le asigna un valor igual a tamanio - i - 1. De esta forma, 
+el array va desde tamanio - 1 hasta 0.
+
+¿Cómo se genera un vector con valores aleatorios? ¿Pueden existir claves repetidas? ¿Cuál es el orden del tiempo de ejecución de 
+este método?
+
+El vector con valores aleatorios se genera mediante el metodo generarDatosAleatorios(int tamanio), en el cual se generan valores 
+aleatorios usando la clase Random de Java. No pueden existir claves repetidas, ya que se utiliza un array auxiliar datosUtilizados para
+ asegurarse de que cada posición reciba un valor único.
+
+El orden de tiempo de ejecución es O(n) y se especifica por la n en el parametro "tamanio".
+
+¿Cuántos elementos contiene el vector de datos generado? ¿Cómo se puede modificar esta clase para que la cantidad de elementos 
+del vector sea parametrizable?
+
+El vector de datos generado contiene tantos elementos como el valor del parametro "tamanio" que se pasa a los metodos 
+generarDatosAscendentes, generarDatosDescendentes y generarDatosAleatorios. Para hacer que la cantidad de elementos sea parametrizable,
+ya está implementado en la clase mediante el uso del parámetro "tamanio".
+
+¿Cómo podemos verificar que un conjunto está ordenado? ¿Cuál sería el orden del tiempo de ejecución de un algoritmo que lo haga?
+
+Para verificar podemos recorrer el array desde el primer elemento hasta el penúltimo, comparando cada elemento con el siguiente para 
+asegurarnos de que está en orden ascendente (o descendente). El metodo estaOrdenado(int[] datosAVerificar, boolean orden) de la clase
+ TClasificador realiza esta verificación, donde el parametro orden determina si se verifica el orden ascendente (true) o descendente 
+ (false).
