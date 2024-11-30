@@ -1,0 +1,321 @@
+UT8_PD1
+
+
+Grafo 
+
+  
+
+
+1-Visitamos A
+
+2-Visitamos primer adyacente B
+
+3-Visitamos primer Adyacente D
+
+4-D no tiene adyacentes por lo que volvemos a B
+
+5-B no tiene adyacentes sin visitar por lo qué volvemos a A
+
+6-Desde A visitamos C
+
+7-Desde C visitamos el primer Adyacente no visitado E
+
+8-Desde E retrocedemos a C 
+
+9-Desde C retrocedemos a A
+
+10-FIN
+
+
+Bosque abarcador:
+
+   A
+  / \
+ B   C
+  \   \
+   D   E
+
+
+
+
+
+Grafo 2:
+
+      A
+     / \
+    B   C
+   /|   |
+  D E   F
+
+
+1-Visitamos A
+
+2-Visitamos adyancente de A, B
+
+3-Visitamos primer adyacente de B, D
+
+4-D no tiene adyancentes, volvemos a B
+
+5-B tiene adyancente E sin visitar, visitamos E
+
+6-E no tiene adyacentes, volvemos a B
+
+7-B no tiene adyacentes sin visitar, volvemos a A
+
+8-Visitamos adyacente de A, C
+
+9-Visitamos adyacente de C, F
+
+10-Volvemos de F a C
+
+11-Volvemos de C a A
+
+12-Fin
+
+Árbol Abarcador: 
+
+      A
+     / \
+    B   C
+   / \   \
+  D   E   F
+
+Ejercicio 2:
+
+Grafo 1
+V = {A, B, C, D}
+T = {(A-B, 1), (A-C, 3), (B-C, 2), (B-D, 4), (C-D, 5)}
+
+Paso a paso del algoritmo de Prim
+Inicialización:
+
+Elegimos el nodo A como punto de partida.
+U = {A}
+Aristas posibles: {(A-B, 1), (A-C, 3)}
+
+Primera iteración:
+
+Arista de menor peso: (A-B, 1)
+Añadimos B a U.
+U = {A, B}
+Aristas posibles: {(A-C, 3), (B-C, 2), (B-D, 4)}
+
+Segunda iteración:
+
+Arista de menor peso: (B-C, 2)
+Añadimos C a U.
+U = {A, B, C}
+Aristas posibles: {(A-C, 3), (B-D, 4), (C-D, 5)}
+
+Tercera iteración:
+
+Arista de menor peso: (B-D, 4)
+Añadimos D a U.
+U = {A, B, C, D}
+
+
+Grafo 2:
+
+V = {A,B,C,D,E}
+
+T = {(A-B, 1), (A-C, 4) , (B-C, 2) , (B-D, 5) , (C-D, 3) , (C-E, 4) , (D-E, 2)
+
+Elegimos A como punto de partida:
+
+U = {A}
+
+Aristas posibles: {(A-B, 1), (A-C, 4) , (B-C, 2) , (B-D, 5) , (C-D, 3) , (C-E, 4) , (D-E, 2)
+
+
+Segunda iteración:
+
+Arista de menor costo (A-B, 1)
+
+añadimos B a U
+
+U = {A,B}
+
+Aristas posibles: {(A-C, 4) , (B-C, 2) , (B-D, 5) , (C-D, 3) , (C-E, 4) , (D-E, 2)}
+
+
+Tercera iteracción:
+
+Arista de menor costo: (B-C, 2)
+
+añadimos C a U
+
+U = {A,B,C}
+
+Aristas posibles {(B-D, 5) , (C-D, 3) , (C-E, 4) , (D-E, 2)}
+
+
+Cuarta iteracción:
+
+Arista de menor costo (C-D, 3)
+
+Añadimos D a U
+
+U = {A,B,C,D}
+
+Aristas disponibles {(B-D, 5),(C-E, 4) , (D-E, 2)}
+
+
+Quinta iteracción:
+
+Arista de menor costo (D-E, 2)
+
+Añadimos E a U
+
+U = {A,B,C,D,E}
+ 
+AAM: {(A-B, 1), (B-C, 2) , (C-D, 3) , (D-E, 2)}
+
+
+
+
+
+EJERCICIO 3:
+
+
+Inicialización
+
+Vértice inicial: b
+
+Cola: [b]
+
+Visitados: {b}
+
+Bosque abarcador: {}
+
+
+Primera iteracción:
+
+Quitamos b de la cola:
+
+visitamos adyacentes de b
+
+d no está visitado,
+
+visitamos d
+
+añadimos d a la cola [d]
+
+
+Segunda iteracción:
+
+
+visitamos adyacentes de b
+
+e no está visitado,
+
+visitamos e
+
+añadimos e a la cola [d,e]
+
+Bosque abarcador: {(b-d), (b-e)}
+
+
+Tercera iteracción:
+
+
+visitamos adyacentes de b
+
+a no está visitado,
+
+visitamos a
+
+añadimos a a la cola [d,e,a]
+
+Bosque abarcador: {(b-d), (b-e), (b-a)}
+
+
+Cuarta iteracción:
+
+quitamos d de la cola, visitamos adyacentes de D
+
+no tiene 
+
+cola [e,a]
+
+
+
+Quinta iteracción:
+
+
+quitamos e de la cola, visitamos adyacentes de e
+
+b ya fue visitado,
+
+a ya fue visitado
+
+c no fue visitado
+
+añadimos c a la cola 
+
+[a,c]
+
+bosque abarcador: {(b-d), (b-e), (b-a),(e,c)}
+
+
+sexta iteracción:
+
+quitamos a de la cola, visitamos adyacentes de a 
+
+b ya fue visitado
+
+e ya fue visitado,
+
+
+cola[c]
+
+
+séptima iteracción:
+
+quitamos c de la cola, visitamos adyacentes de c
+
+e ya fue visitado,
+
+visitamos f 
+
+añadimos f a la cola
+
+cola[f]
+
+bosque abarcador {(b-d), (b-e), (b-a),(e,c), (c,f)}
+
+
+Octava iteracción:
+
+visitamos adyacente de c
+
+e ya fue visitado
+
+f ya fue visitado
+
+visitamos g
+
+añadimos g a la cola
+
+cola[f,g]
+
+bosque abarcador: {(b-d), (b-e), (b-a),(e,c), (c,f), (c, g)}
+
+
+novena iteracción:
+
+quitamos f de la cola, visitamos adyacentes de f,
+
+c ya fue visitado,
+
+cola[g]
+
+decima iteracción:
+
+quitamos g de la cola, visitamos adyacentes de g,
+
+c ya fue visitado,
+
+
+cola[]
+
+Bosque abarcador final : {(b-d), (b-e), (b-a),(e,c), (c,f), (c, g)}
