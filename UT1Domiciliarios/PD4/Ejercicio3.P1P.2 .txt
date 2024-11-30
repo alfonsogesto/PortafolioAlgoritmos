@@ -1,0 +1,16 @@
+1-
+String[] students = new String[10];
+String studentName = "Peter Parker";
+students[0] = studentName;
+studentName = null;
+
+
+En el codigo se crea primero un array de String de tamaño 10, el cual luego se referencia en la variable
+students. Luego se crea la cadena Peter Parker y se le asigna la variable, luego studentName referencia a
+la cadena, y la guarda en students[0] y studentName pasa a null. Por ende hay 1 referencia del array y una 
+referencia de la cadena Peter Parker.
+Ninguno sería candidato a poder ser eliminados ya que la cadena y el array estan siendo llamados y en uso.
+
+2-En Java, los objetos no se destruyen manualmente, se usa el Garbage Collector de Java que automáticamente 
+destruye los objetos que ya no tienen referencias activas. Para hacer que un objeto sea elegible para el Garbage Collector
+se ponen todas las referencias al objeto en null.

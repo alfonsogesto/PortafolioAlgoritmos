@@ -1,0 +1,36 @@
+PARTE 1 (sin computadora)
+    EJERCICIO 1
+Dado el siguiente programa:
+public static void zoop () {
+baffle ();
+System.out.print ("Vos zacata ");
+baffle ();
+}
+public static void main (String[] args) {
+System.out.print ("No, yo ");
+zoop ();
+System.out.print ("Yo ");
+baffle ();
+}
+public static void baffle () {
+System.out.print ("pac");
+ping ();
+}
+public static void ping () {
+System.out.println (".");
+}
+¿Cuál es la salida? Sé preciso acerca de dónde hay espacios y dónde hay nuevas líneas.
+Indicar cuál es la respuesta más correcta: (\n denota nueva línea)
+
+Respuesta: Primero se ejecuta main, por ende lo primero que se va a imprimir es "No, yo" , seguido de eso en la linea de abajo se llama 
+a zoop, el cual primero llama a baffle() que nos imprime "pac", al no tener un \n eso se imprime seguido a lo anterior, dando el resultado de "No, yo pac",
+luego countinuando con baffle, este llama a ping que pone el punto final e imprime la siguiente frase "No, yo pac."
+ Continuando se sigue ejecutando el resto de zoop() el cual imprime "Vos zacata" y luego vuelve a llamar a baffle(), agregando un "pac" y 
+ dentro de baffle se ejecuta ping(), el cual agrega "." e imprime como resultado final "Vos zacata pac."
+
+ Por ultimo se vuelve a main, el cual hace un print de "Yo" y en la linea siguiente se corre baffle(), agregando un "pac" y dentro de baffle
+ se corre ping, que como ya se sabe, agrega el punto final e imprime.
+
+ Resultado impreso en consola: No, yo pac.
+                               Vos zacata pac.
+                               Yo pac.
