@@ -1,0 +1,8 @@
+EJERCICIO #8.
+¿Cuál es la capacidad inicial del siguiente stringbuilder?
+StringBuilder sb = new StringBuilder("Able was I ere I saw
+Elba.");
+
+El stringbuilder tendra una capacidad de 43 ya que tiene 27 caracteres de la cadena, ademas de que cuenta con el buffer adicional, el
+cual vimos en el ejercicio anterior (con la documentacion de oracle) el cual nos decia que la clase string builderbuilder cuenta 
+con una capacidad de 16.
