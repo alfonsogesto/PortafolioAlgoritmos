@@ -1,0 +1,27 @@
+Parte 3:
+Lenguaje Natural:
+El algoritmo verificara que la raíz no tenga hijos en primera instancia, en caso de tener retorna nulo, a partir de este punto se ejecuta el método insertar para cada palabra recibida, ingresando en el final de palabra los índices recibidos.
+
+Precondiciones:
+La raíz que ser nula
+Tiene que haber una lista de paginas
+
+Postcondiciones:
+El texto y la lista no se modifican
+El trie tiene todos los elementos que no tenia antes
+La altura del trie será igual o mayor a la palabra mas larga
+
+Pseudocódigo:
+Nodotrie insertar(texto, lista paginas)
+COM
+nodoActual<- this
+Para cada carácter de texto hacer:
+	unhijo<- nodoActual.obtenerHijo(caracter)
+Si un hijo es nulo entonces 
+	unhijo<-nuevo nodotrie
+	nodoActual.agregar(unHijo,caracter,paginas)
+	FINsi
+nodoActual<-unHijo
+fin para
+nodoActual.setFinPalabra()
+Fin ¿
