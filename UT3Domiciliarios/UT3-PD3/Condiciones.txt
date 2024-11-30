@@ -1,0 +1,63 @@
+1. Método insertar(Nodo<T> nodo)
+
+Precondiciones:
+- La lista puede estar vacía o contener nodos.
+- El nodo pasado como argumento no debe ser null.
+
+Postcondiciones:
+- Si la lista estaba vacía, el nodo insertado se convierte en el primer nodo de la lista.
+- Si la lista no estaba vacía, el nodo se agrega al final de la lista.
+
+2. Método insertar(Comparable etiqueta, T dato)
+
+Precondiciones:
+- La lista puede estar vacía o contener nodos.
+- Se debe proporcionar una etiqueta válida (no null) y un dato válido (no null).
+
+Postcondiciones:
+- Un nuevo nodo con la etiqueta y el dato proporcionados es creado e insertado al final de la lista.
+
+3. Método buscar(Comparable clave)
+
+Precondiciones:
+- La lista puede estar vacía o contener nodos.
+- Se debe proporcionar una clave válida (no null).
+
+Postcondiciones:
+- Devuelve el nodo cuyo valor de etiqueta coincide con la clave proporcionada.
+- Si no se encuentra ningún nodo con esa clave, devuelve null.
+
+4. Método eliminar(Comparable clave)
+
+Precondiciones:
+- La lista puede estar vacía o contener nodos.
+- Se debe proporcionar una clave válida (no null).
+
+Postcondiciones:
+- Si el nodo con la clave proporcionada está presente, es eliminado de la lista.
+- Si no se encuentra ningún nodo con esa clave, la lista permanece igual.
+
+5. Método imprimir()
+
+Precondiciones:
+- La lista puede estar vacía o contener nodos.
+
+Postcondiciones:
+- Imprime las etiquetas de los nodos en la lista enlazada.
+- Si la lista está vacía, no imprime nada.
+
+6. Método cantElementos()
+
+Precondiciones:
+- La lista puede estar vacía o contener nodos.
+
+Postcondiciones:
+- Devuelve el número total de nodos en la lista. Si la lista está vacía, devuelve 0.
+
+7. Método esVacia()
+
+Precondiciones:
+- Ninguna, puede invocarse en cualquier momento.
+
+Postcondiciones:
+- Devuelve true si la lista no contiene nodos (está vacía) y false si contiene al menos un nodo.
