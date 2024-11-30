@@ -1,0 +1,16 @@
+UT4-TA1
+1-
+PREORDEN
+X,B,A,J,R,T,M,,S,W,C,Z,F
+
+POSTRODEN
+A,R,J,T,B,X,C,F,Z,W,S,M
+
+INORDEN
+A,B,R,J,T,X,M,S,C,W,F,Z
+
+4-
+a)Devuelve la altura
+b)O(N)
+c)1=A
+  2=A
