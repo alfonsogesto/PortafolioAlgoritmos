@@ -1,0 +1,178 @@
+UT9-PD3
+
+1)Quicksort sigue el paradigma de divide and conquer, el algoritmo selecciona un pivote, puede seleccionarlo de varias maneras, la mediana,
+el promedio, el primer o último elemento del arreglo etc, después inicializa dos contadores, un en el primer elemento del array y otro en
+el último elemento del array el primer contador avanza mientras el elemento actual sea menor al pivote, cuándo finaliza su ejecución, 
+se procede a ejecutar el contador de la derecha que decrece mientras el elemento actual es mayor o igual al pivote.
+
+2)Paso 1: Primera Llamada a Quicksort
+
+Llamada inicial:
+quicksort(0, 7);
+
+Encuentra Pivote:
+Seleccionamos el mayor de los dos primeros elementos: 55 (índice 1).
+
+Partición:
+Particionamos el conjunto alrededor del pivote 55:
+[44 - 12 - 42 - 18 - 6 - 55 - 94 - 67]
+
+Resultado de la partición:
+[44 - 12 - 42 - 18 - 6] - 55 - [94 - 67]
+
+Llamadas recursivas:
+quicksort(0, 4);
+quicksort(6, 7);
+
+Paso 2: Llamada a Quicksort(0, 4)
+
+Encuentra Pivote:
+Seleccionamos el mayor de los dos primeros elementos: 44 (índice 0).
+
+Partición:
+Particionamos el conjunto alrededor del pivote 44:
+[12 - 42 - 18 - 6 - 44]
+
+Resultado de la partición:
+[12 - 42 - 18 - 6] - 44
+
+Llamadas recursivas:
+quicksort(0, 3);
+quicksort(5, 4); // No hace nada ya que el segmento es de longitud 0
+
+
+Paso 3: Llamada a Quicksort(6, 7)
+
+Encuentra Pivote:
+Seleccionamos el mayor de los dos primeros elementos: 94 (índice 6).
+
+Partición:
+Particionamos el conjunto alrededor del pivote 94:
+[67 - 94]
+
+Resultado de la partición:
+[67] - 94
+
+Llamadas recursivas:
+quicksort(6, 6); // No hace nada ya que el segmento es de longitud 0
+quicksort(8, 7); // No hace nada ya que el segmento es de longitud 0
+
+
+Paso 4: Llamada a Quicksort(0, 3)
+
+Encuentra Pivote:
+Seleccionamos el mayor de los dos primeros elementos: 12 (índice 0).
+
+Partición:
+Particionamos el conjunto alrededor del pivote 12:
+[6 - 12 - 18 - 42]
+
+Resultado de la partición:
+[6] - 12 - [18 - 42]
+
+Llamadas recursivas:
+quicksort(0, 0); // No hace nada ya que el segmento es de longitud 0
+quicksort(2, 3);
+
+
+Paso 5: Llamada a Quicksort(2, 3)
+
+
+Encuentra Pivote:
+Seleccionamos el mayor de los dos primeros elementos: 18 (índice 2).
+
+Partición:
+
+Particionamos el conjunto alrededor del pivote 18:
+[18 - 42]
+
+Resultado de la partición:
+[18] - 42
+
+Llamadas recursivas:
+quicksort(2, 2); // No hace nada ya que el segmento es de longitud 0
+quicksort(4, 3); // No hace nada ya que el segmento es de longitud 0
+
+
+Resumen de llamadas y profundidad
+
+Total de llamadas a Quicksort (incluyendo la inicial):
+quicksort(0, 7);
+quicksort(0, 4);
+quicksort(6, 7);
+quicksort(0, 3);
+quicksort(5, 4); // No hace nada
+quicksort(6, 6); // No hace nada
+quicksort(8, 7); // No hace nada
+quicksort(0, 0); // No hace nada
+quicksort(2, 3);
+quicksort(2, 2); // No hace nada
+quicksort(4, 3); // No hace nada
+
+Total: 11 llamadas
+
+Máximo nivel de profundidad recursiva:5
+
+3)
+Características más importantes de la nueva versión de Quicksort en java,
+
+-Introducido en Java 7, reemplazando el quicksort tradicional de un solo pivote.
+
+-Utiliza dos pivotes en lugar de uno, lo que generalmente mejora el rendimiento en muchos tipos de datos.
+
+A partir de Java 7, la implementación de "Arrays.sort" se cambió a una nueva variante de Quicksort llamado Quicksort de Doble Pivote,
+
+Esta implementación fue desarrollada por Vladimir Yaroslavskiy, Jon Bentley y Joshua Bloch.
+
+Se realizaron pruebas de benchmarking con 10 millones de enteros (tanto aleatorios como duplicados) y estos fueron los resultados:
+
+Datos Aleatorios:
+Quicksort básico: 1222 ms
+Quicksort de tres vías: 1295 ms
+Quicksort de doble pivote: 1066 ms
+
+Datos Duplicados:
+Quicksort básico: 378 ms
+Quicksort de tres vías: 15 ms
+Quicksort de doble pivote: 6 ms
+
+Las problemas qué se encontraron fueron:
+
+Quicksort de Tres Vías:
+
+1.Puede tener una ligera penalización en datos aleatorios debido a la gestión adicional de segmentos.
+2.Maneja mejor los datos duplicados, evitando el peor caso de O(n al cuadrado).
+
+Quicksort de Doble Pivote:
+
+1.Presenta problemas con datos duplicados, potencialmente incurriendo en O(n al cuadrado) en algunas implementaciones.
+2.Es posible mejorar la implementación manejando adecuadamente los duplicados antes de la ordenación principal.
+
+
+Encontraron algunas soluciones cómo por ejemplo qué se puede avanzar el índice inferior cuando los pivotes son iguales para manejar mejor los datos duplicados ,las implementaciones trazables ayudan a visualizar el estado del algoritmo en tiempo real, facilitando la depuración y comprensión del proceso.
+
+
+4A)
+Análisis del orden de tiempo de ejecución:
+
+quicksort(i, j: tipo entero);
+  // Clasifica los elementos V[i],..,V[j] del arreglo externo V
+  pivote : TipoClave; // el valor del pivote
+  IndicePivote : tipo entero; // el índice de un elemento de V donde clave es el pivote
+  k : tipo entero; // índice al inicio del grupo de elementos >= pivote
+COM
+  IndicePivote := EncuentraPivote(i, j); // O(1)
+  SI IndicePivote <> 0 entonces // O(1)
+    pivote := V[IndicePivote].clave; // O(1)
+    k := particion(i, j, pivote); // O(n)
+    quicksort(i, k - 1); // T(n/2)
+    quicksort(k, j); // T(n/2)
+  FIN SI; // O(1)
+FIN; // quicksort
+
+
+Orden de tiempo de ejecución O(n log n)
+
+
+b) Cuándo el conjunto es pequeño, se puede mejorar el algoritmo de Quicksort para qué utilice un método de ordenamiento más sencillo, 
+cómo la ordenación por inserción cuándo el tamaño del subconjunto es menor a un umbral específico.
