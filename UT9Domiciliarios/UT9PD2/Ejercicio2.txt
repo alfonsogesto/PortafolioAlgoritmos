@@ -1,0 +1,260 @@
+UT9PD2
+
+1)
+
+Algoritmo Burbuja:
+
+Conjunto de datos inicial:
+
+44
+55
+12
+42
+94
+18
+6
+67
+
+
+Iteracción 1 (i = 1)
+
+j = 8   44   55   12   42   94   18   6   67
+j = 7   44   55   12   42   94   18   6   67   ->   44   55   12   42   94   18   6   67
+j = 6   44   55   12   42   94   6    18   67   ->   44   55   12   42   94   6    18   67
+j = 5   44   55   12   42   6    94   18   67   ->   44   55   12   42   6    94   18   67
+j = 4   44   55   12   6    42   94   18   67   ->   44   55   12   6    42   94   18   67
+j = 3   44   55   6    12   42   94   18   67   ->   44   55   6    12   42   94   18   67
+j = 2   44   6    55   12   42   94   18   67   ->   44   6    55   12   42   94   18   67
+j = 1   6    44   55   12   42   94   18   67   ->   6    44   55   12   42   94   18   67
+
+
+
+Iteracción 2 (i = 2)
+
+j = 8   44   55   12   42   94   18   6   67
+j = 7   44   55   12   42   94   18   6   67   ->   44   55   12   42   94   18   6   67
+j = 6   44   55   12   42   94   6    18   67   ->   44   55   12   42   94   6    18   67
+j = 5   44   55   12   42   6    94   18   67   ->   44   55   12   42   6    94   18   67
+j = 4   44   55   12   6    42   94   18   67   ->   44   55   12   6    42   94   18   67
+j = 3   44   55   6    12   42   94   18   67   ->   44   55   6    12   42   94   18   67
+j = 2   44   6    55   12   42   94   18   67   ->   44   6    55   12   42   94   18   67
+j = 1   6    44   55   12   42   94   18   67   ->   6    44   55   12   42   94   18   67
+
+Iteracción 3 (i = 3)
+
+j = 8   6    12   44   55   18   42   67   94   ->   6    12   44   55   18   42   67   94
+j = 7   6    12   44   55   18   42   67   94   ->   6    12   44   55   18   42   67   94
+j = 6   6    12   44   55   18   42   67   94   ->   6    12   44   55   18   42   67   94
+j = 5   6    12   44   18   55   42   67   94   ->   6    12   44   18   55   42   67   94
+j = 4   6    12   18   44   55   42   67   94   ->   6    12   18   44   55   42   67   94
+
+
+Iteración 4 (i = 4)
+
+
+j = 8   6    12   18   44   55   42   67   94   ->   6    12   18   44   55   42   67   94
+j = 7   6    12   18   44   55   42   67   94   ->   6    12   18   44   55   42   67   94
+j = 6   6    12   18   44   55   42   67   94   ->   6    12   18   44   42   55   67   94
+j = 5   6    12   18   44   42   55   67   94   ->   6    12   18   42   44   55   67   94
+
+
+Iteración 5 (i = 5)
+
+j = 8   6    12   18   42   44   55   67   94   ->   6    12   18   42   44   55   67   94
+j = 7   6    12   18   42   44   55   67   94   ->   6    12   18   42   44   55   67   94
+j = 6   6    12   18   42   44   55   67   94   ->   6    12   18   42   44   55   67   94
+
+Iteración 6 (i = 6)
+
+j = 8   6    12   18   42   44   55   67   94   ->   6    12   18   42   44   55   67   94
+j = 7   6    12   18   42   44   55   67   94   ->   6    12   18   42   44   55   67   94
+
+
+
+Iteración 7 (i = 7)
+
+j = 8   6    12   18   42   44   55   67   94   ->   6    12   18   42   44   55   67   94
+
+
+Resultado:
+
+
+6
+12
+18
+42
+44
+55
+67
+94
+
+
+2)
+
+
+Alternativas para mejorar Bubble sort:
+
+Algoritmo Burbuja Optimizado con Detección de Orden
+
+Esta mejora introduce una bandera (flag) para detectar si se realizaron intercambios en una pasada completa. Si no se realizaron intercambios, esto quiere decir que la lista ya está ordenada y se puede finalizar el algoritmo antes de completar todas las pasadas.
+
+
+
+Desde i = 1 hasta N-1 hacer
+    flag = false
+    Desde j = N hasta i + 1 hacer
+        Si V[j].clave < V[j-1].clave entonces
+            intercambia (V[j], V[j-1])
+            flag = true
+        Fin si
+    Fin desde
+    Si flag == false entonces
+        break
+    Fin si
+Fin desde
+
+
+Algoritmo Burbuja con Bucle de Barrido Bidireccional:
+
+
+En esta mejora, el algoritmo realiza dos pasadas en cada iteración: una hacia adelante y otra hacia atrás. Esto puede ayudar a mover tanto los elementos más grandes como los más chicos, de forma más rápida hacia sus respectivas posiciones
+
+inferior = 1
+superior = N
+hecho = false
+Mientras hecho == false hacer
+    hecho = true
+    Desde i = inferior hasta superior - 1 hacer
+        Si V[i].clave > V[i + 1].clave entonces
+            intercambia (V[i], V[i + 1])
+            hecho = false
+        Fin si
+    Fin desde
+    Si hecho == true entonces
+        romper
+    Fin si
+    superior = superior - 1
+    Desde i = superior hasta inferior + 1 hacer
+        Si V[i].clave < V[i - 1].clave entonces
+            intercambia (V[i], V[i - 1])
+            hecho = false
+        Fin si
+    Fin desde
+    inferior = inferior + 1
+Fin mientras
+
+
+3)
+
+Algoritmo Burbuja Optimizado con Detección de Orden:
+
+Iteración 1 (i = 1)
+
+
+67  44  55  12  42  94  18  6
+67  44  55  12  42  94  6  18
+67  44  55  12  42  6  94  18
+67  44  55  12  6  42  94  18
+67  44  55  6  12  42  94  18
+67  44  6  55  12  42  94  18
+67  6  44  55  12  42  94  18
+6  67  44  55  12  42  94  18
+
+
+Iteración 2 (i = 2)
+
+6  67  44  55  12  42  18  94
+6  67  44  55  12  18  42  94
+6  67  44  55  12  18  42  94
+6  67  44  55  12  18  42  94
+6  67  44  12  55  18  42  94
+6  67  12  44  55  18  42  94
+6  12  67  44  55  18  42  94
+
+
+
+Iteración 3 (i = 3)
+
+6  12  67  44  55  18  42  94
+6  12  67  44  18  55  42  94
+6  12  67  44  18  42  55  94
+6  12  67  44  18  42  55  94
+6  12  67  18  44  42  55  94
+6  12  18  67  44  42  55  94
+
+
+Iteración 4 (i = 4)
+
+6  12  18  67  44  42  55  94
+6  12  18  67  42  44  55  94
+6  12  18  67  42  44  55  94
+6  12  18  42  67  44  55  94
+
+Iteración 5 (i = 5)
+
+6  12  18  42  67  44  55  94
+6  12  18  42  44  67  55  94
+6  12  18  42  44  55  67  94
+
+
+Iteración 6 (i = 6)
+
+6  12  18  42  44  55  67  94
+
+
+Iteración 7 (i = 7)
+
+
+6  12  18  42  44  55  67  94
+
+
+Algoritmo Burbuja con Bucle de Barrido Bidireccional:
+
+
+Iteración 1 (Pasada hacia adelante)
+
+
+44  55  12  42  94  18  6  67
+44  12  55  42  94  18  6  67
+44  12  42  55  94  18  6  67
+44  12  42  55  94  18  6  67
+44  12  42  55  18  94  6  67
+44  12  42  55  18  6  94  67
+44  12  42  55  18  6  67  94
+
+
+Iteración 1 (Pasada hacia atrás)
+
+44  12  42  55  18  6  67  94
+44  12  42  18  55  6  67  94
+44  12  42  18  6  55  67  94
+44  12  18  42  6  55  67  94
+44  12  18  6  42  55  67  94
+12  44  18  6  42  55  67  94
+12  18  44  6  42  55  67  94
+12  18  6  44  42  55  67  94
+12  6  18  44  42  55  67  94
+6  12  18  44  42  55  67  94
+
+
+Iteración 2 (Pasada hacia adelante)
+
+6  12  18  44  42  55  67  94
+6  12  18  42  44  55  67  94
+6  12  18  42  44  55  67  94
+
+
+Iteración 2 (Pasada hacia atrás)
+6  12  18  42  44  55  67  94
+
+
+El algoritmo termina ya que no se realizaron intercambios en la última iteración.
+
+Resultado final:
+
+
+6 - 12 - 18 - 42 - 44 - 55 - 67 - 94
+
+
+
+4: Shakesort es esencialmente igual qué el algoritmo con bucle de barrido bidireccional
