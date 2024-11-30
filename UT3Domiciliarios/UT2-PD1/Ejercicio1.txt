@@ -1,0 +1,12 @@
+miFunción
+ Desde i = 1 hasta N-1 hacer O(n)
+  Desde j = N hasta i+1 hacer O(n)
+   Si arreglo[j].clave < arreglo[j-1].clave entonces O(1)
+   Intercambia(arreglo[j], arreglo[j-1])   O(1)
+   Fin si
+  Fin desde
+ Fin desde
+Fin
+
+Total de ejecucion:
+n*n*1*1=O(n^2)
