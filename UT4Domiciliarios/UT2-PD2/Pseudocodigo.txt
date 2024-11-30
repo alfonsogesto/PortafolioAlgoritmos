@@ -1,0 +1,131 @@
+Ejercicio 1:
+
+
+Factorial:
+
+Se calcula multiplicando el numero por todos los enteros positivos menores a el hasta 1.
+
+
+Precondiciones:
+numero tiene que ser un entero.
+
+Postcondiciones:
+El resultado del algoritmo debe ser entero.
+
+factorial(numero)
+COM
+Si numero = 1 o numero = 0 O(1)
+ retornar 1
+sino
+ retornar numero * factorial(numero - 1) O(n)
+fin si
+FIN
+Respuesta:
+
+Si, el algoritmo siempre progresará al caso base ya qué al multiplicar a numero por su anterior(y al ir decrementando el valor de numero) en algún punto número va a valer 1 y va a entrar al caso base.
+
+
+Orden de tiempo de ejecución O(1) + O(n) = O(n)
+
+Si el número es negativo produce una excepción de tipo StackOverflowError
+
+esto usualmente indica recursión infinita.
+
+
+Ejercicio 2:
+
+
+Pre Condiciones: n no puede ser negativo, ni tampoco puede ser 0
+
+Post Condicione: El algoritmo debe devolver la suma de los primeros n números del array.
+
+A = Array de enteros
+n = entero
+
+sumaLinea(A, n)
+
+COM
+ si n = 1 O(1)
+   retornar A[0] O(1)
+ sino
+   retonar sumaLinea(A, n - 1) + A[n - 1] O(n)
+ fin si
+
+FIN
+
+
+Verifico que el algoritmo siempre progresa hacia el caso base, ya qué n en algún momento va a valer 1.
+
+
+Tiempo de ejecución: O(1) + O(1) + O(n) = O(n)
+
+
+Si el número es negativo produce una excepción de tipo StackOverflowError
+
+esto usualmente indica recursión infinita.
+
+Si el Array es negativo produce una excepción de tipo ArrayIndexOutOfBoundsException
+
+Indicando que el array ha sido inicializado con un índice inválido, este índice es negativo, o mayor a o igual a la longitud del array
+
+
+Ejercicio 3:
+
+Potencia
+
+
+Pseudocódigo:
+
+Pre-Condiciones: 
+
+-El exponente del numero no puede ser negativo
+
+Post-Condiciones:
+
+-El resultado del algoritmo debe ser la potencia de ese número:
+
+Potencia(x,n)
+
+COM
+ si n = 0
+  retornar 1 O(1)
+ sino
+   retornar x*Potencia(x, n - 1) O(n)
+
+Tiempo de ejecución 
+
+O(1) + O(n) = O(n)
+
+
+Ejercicio 4:
+
+Pre-Condiciones:
+
+Post Condiciones:
+
+Los elementos devueltos por parámetro deben estar invertidos.
+
+InvertirArray(A, índice i, índice j)
+
+COM
+
+Si i < j hacer
+ Intercambiar A[i] y A[j] O(1)
+ InvertirArray(A, i + 1 , j - 1) //Invertimos lo que queda del Array después de invertir los índices. O(n)
+
+Fin Si
+
+FIN
+
+Para intercambiar realizamos un swapping con una variable temporal.
+
+Tiempo de ejecución:
+
+O(1) + O(n) = O(n)
+
+
+parámetros fuera de rango = devuelvo el propio Array.
+
+Vector vacío = el algoritmo no devuelve nada
+
+Vector con sólo un elemento = el algoritmo devuelve el propio elemento.
