@@ -1,0 +1,33 @@
+UT7-PD6
+
+14.25)
+
+Suponga que tiene un grafo en el que cada vértice representa una computadora y en el que cada arista representa una conexión directa entre dos computadoras.
+
+Cada arista (v,w) tiene un peso P v,w que representa la probabilidad de que una transferencia de red entre v y w tenga éxito 0 < p v,w <= 1. Escriba un programa que encuentre la forma más fiable de transferir datos desde una computadora inicial designada S a todas las demás computadoras de red.
+
+
+Enfoque, utilizar Dijkstra pero en vez de encontrar el camino de menor costo entre el origen y cada uno de los vértices del grafo, encontramos el camino de mayor costo, que representa la mayor probabilidad de éxito en la transferencia de datos.
+
+Supongo que la computadora Inicial se almacena en un vértice llamado verticeInicial
+
+Función Dijkstra
+COM
+Inicializar S, D
+S = {verticeInicial};
+
+para cada i en V - {verticeInicial}
+D[i] = 0  // El valor inicial es 0 ya que estamos maximizando la probabilidad
+D[start] = 1  // La probabilidad de llegar al nodo inicial es 1
+
+Mientras V <> S hacer
+Elegir w perteneciente a V-S, tal que la distancia D[w)] sea un máximo
+
+Agregar w a S
+ParaCada v perteneciente a V-S hacer
+
+D[v] = max (D[v], D[w] * probabilidad(w,v)
+
+FinMientras;
+
+FIN 

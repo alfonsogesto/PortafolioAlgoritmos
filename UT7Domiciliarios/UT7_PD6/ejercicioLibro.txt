@@ -1,0 +1,82 @@
+UT7-PD6
+
+14.23)
+
+Un estudiante necesita aprobar una serie de cursos para graduarse y esos cursos tienen una serie de prerrequisitos que hay que cumplir. Suponga que se ofrecen todos los cursos de cada semestre y que el estudiante se puede matricular de un número ilimitado de cursos.A partir de una lista de cursos y sus prerrequisitos, calcule un plan que requiera el número mínimo de semestres.
+
+
+La idea es asumir que tengo un grafo dirigido G, donde cada nodo representa un curso, y una arista dirigida(u,v) indica que el curso u es un prerequisito del curso v.
+
+inicializar una lista de grados de entrada, donde grados[i] es el número de prerequisitos (aristas entrantes) del curso i.
+
+inicializar una lista semestres donde semestres[i] es el número mínimo de semestres necesarios para completar el curso i
+
+crear una cola para almacenar los nodos de grados de entrada cero (cursos sin prerrequisitos)
+
+
+para cada nodo en el grafo
+
+-Calcular el grado de entrada(el número de aristas entrantes, numero de prerequisitos) de cada nodo y almacenarlo en la lista
+
+si el grado de entrada de un nodo es 0(no tiene prerrequisitos)
+
+ -añadir ese nodo a la cola
+ -establece semestre[nodo] = 1 , ya qué ese curso puede ser tomado en el primer semestre
+
+-Inicializar un contador de semestresMaximos = 0
+
+
+INICIO
+
+función calcularMinimoSemestres(Grafo G, entero N)
+
+  COM
+
+  lista enteros grados[N]
+  lista enteros semestres[N]
+  Cola Cola
+
+  Para i desde 0 hasta N-1 hacer
+    grados[i] = 0
+    semestres[i] = 0
+  Fin Para
+
+  // Calcular el grado de entrada para cada nodo
+  Para cada nodo u en el grafo G hacer
+    Para cada nodo v adyacente a u hacer
+      grados[v] = grados[v] + 1
+    Fin Para
+  Fin Para
+
+  // Añadir nodos con grado de entrada 0(sin prerrequisitos) a la cola
+  Para cada nodo u en el grafo G hacer
+    Si grados[u] = 0 entonces
+      Cola.encolar(u)
+      semestres[u] = 1
+    Fin Si
+  Fin Para
+
+  entero semestresMaximos = 0
+
+
+  Mientras Cola no esté vacía hacer
+    nodo u = Cola.desencolar()
+    
+    Para cada nodo v adyacente a u hacer
+      grados[v] = grados[v] - 1
+      
+      Si grados[v] = 0 entonces
+        Cola.encolar(v)
+        semestres[v] = semestres[u] + 1
+        Si semestres[v] > semestresMaximos entonces
+          semestresMaximos = semestres[v]
+        Fin Si
+      Fin Si
+    Fin Para
+  Fin Mientras
+
+  devolver semestresMaximos
+
+Fin Función
+
+FIN
