@@ -1,0 +1,53 @@
+1. Un Árbol Parcialmente Ordenado es
+	a. Un árbol binario que siempre está balanceado
+	b. Un árbol binario de búsqueda
+	c. Un árbol para el que las inserciones siempre toman entre 2h+1 y
+	2h+1-1 comparaciones, siendo h la altura del árbol
+	-d. Ninguna es correcta
+Respuesta Correcta: d) Ninguna es correcta
+NOTA: LO UNICO QUE BUSCAMOS CON ESTA PREGUNTA ES QUE SE
+SENSIBILICE SOBRE LA NECESIDAD Y CONVENIENCIA DE LA
+REPRESENTACION EN VECTOR….
+2. ¿qué operaciones primivas del TDA ARBOL BINARIO (y el correspondiente
+Nodo) no precisaríamos para implementar las dos operaciones indicadas del
+TDA APO?
+	a. TNodoArbolBinario.hijoIzq()
+	-b. TNodoArbolBinario.hijoDer ()
+	c. TNodoArbolBinario.Buscar(unaClave)
+	d. TNodoArbolBinario.Padre()
+
+Respuesta Correcta: b)TNodoArbolBinario.hijoDer ()
+3. ¿cuál sería el orden del empo de ejecución de la operación
+TNodoArbolBinario.Padre() si el árbol está representado como los árboles
+comunes ya tratados?
+	a) O(n)
+	b) Constante
+	c) O(n2)
+	d) O(log (n))
+
+Respuesta Correcta-a) O(n)
+4. Si el TDA Árbol Binario Parcialmente Ordenado – TDA APO – hereda del TDA
+Arbol Binario, para insertar un nuevo elemento deberíamos:
+	a) Usar la operación heredada del TDA AB “Insertar(unNodo)” directamente
+	b) Escribir una nueva operación de inserción, en la primer posición
+	disponible del úlmo nivel
+	c) Escribir una nueva operación que coloque el nuevo elemento en la
+	posición más a la izquierda del úlmo nivel y luego haga los
+	intercambios necesarios para que nalmente quede en el lugar que le
+	corresponde
+	d) Usar una operación externa que luego de insertar recomponga la
+	condición necesaria para el TDA APO
+
+Respuesta Correcta: c) Escribir una nueva operación que coloque el nuevo elemento en la
+	posición más a la izquierda del úlmo nivel y luego haga los
+	intercambios necesarios para que nalmente quede en el lugar que le
+	corresponde
+
+5. ¿cuál sería el orden del tiempo de ejecución de la primiva “Insertar” del
+TDA APO representado en la forma habitual de árboles?
+	a) O(n)
+	b) Constante
+	c) O(n2)
+	d) O(log (n))
+
+Respuesta Correcta: a) O(n)

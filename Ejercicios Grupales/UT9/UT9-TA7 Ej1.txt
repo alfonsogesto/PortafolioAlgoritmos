@@ -1,0 +1,30 @@
+UT9-TA7
+
+R = ['5T', '0C', '5U', '0O', '9!', '1N', '8S', '2R', '6A', '4A', '1G', '5L', '6T', '6I', '7O', '7N']
+u = 0
+v = 9
+
+Conjunto ordenado:
+R=[′0C′,′0O′,′1N′,′1G′,′2R′,′4A′,′5T′,′5U′,′5L′,′6A′,′6T′,′6I′,′7O′,′7N′,′8S′,′9!′]
+
+Vectores auxiliares:
+
+Cuenta=[0,0,0,0,0,0,0,0,0,0]
+
+Para el primer elemento, R[0]=′5T′R[0] = '5T'R[0]=′5T′, la clave es 555. Incrementamos Cuenta[5]: Cuenta=[0,0,0,0,0,1,0,0,0,0]
+
+Hacemos lo mismo para cada elemento de R:
+
+Cuenta=[2,2,1,0,1,3,3,2,1,1]
+Cuenta=[2,4,5,5,6,9,12,14,15,16]
+
+2)
+Comparaciones totales: 10 + 16 + 9 + 16 = 51 10+16+9+16=51.
+Movimientos totales: 10 + 16 + 9 + 16 = 51 10+16+9+16=51
+
+3)El algoritmo de cuenta por distribucion ya es estable
+
+4)El orden de tiempo de ejecucion es O(N)
+
+5) Orden de tiempo en Cuenta por Didtribucion: O(N)
+Orden de tiempo en Heapsort O(NlogN)

@@ -1,0 +1,17 @@
+UT9-TA5
+1-
+ COMIENZO						Orden de tiempo de ej:
+(1) Desde i = 1 hasta N - 1 hacer                              O(n-1)
+(2)	IndiceDelMenor  i					1
+(3)	ClaveMenor  V[i].clave					1
+(4)	Desde j = i + 1 hasta N hacer				O(n-i)
+(5)		Si V[j].clave < ClaveMenor entonces		1
+(6)			IndiceDelMenor  j			1
+(7)			ClaveMenor  V[j].clave			1
+(8)		Fin si						
+(9)	Fin desde
+(10)	intercambia (V[i], V[IndiceDelMenor])			1
+     Fin desde
+ FIN
+
+De las líneas 4-10 se ejecutan n-1 veces.
