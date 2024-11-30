@@ -1,0 +1,182 @@
+UT4-PD3
+
+
+Ejericio 1
+
+Insertar
+
+Lenguaje natural: Comienza con la raíz, en caso de que sea nula se asigna el nodo ingresado a la raíz. En caso contrario llama al méotodo insertar de la raíz. Este método, específico del elemento del árbol binario, compara la etiqueta del nodo ingresado con el nodo perteneciente al método. En caso de que sean iguales, es porque el objeto ya se encuentra por ende no lo agrega al árbol y devuelve falso. En caso de que la etiqueta del nodo ingresado sea mayor y el hijo del nodo propio sea nulo entonces se asigna al hijo derecho el nodo ingresado y devuelve verdadero, si no es nulo realiza llamada recursiva con el nodo derecho. En caso de que la etiqueta ingresada sea menor que la etiqueta del nodo propio, entonces hace lo mismo pero para el hijo izquierdo.
+
+Precondiciones: 
+El árbol no puede ser ciclico, es decir no tener hojas (nodos hijos = nulo).
+Las etiquetas deben ser de un tipo apto de comparar.
+
+Postcondiciones:
+El estado del árbol cambiará y la cantidad de nodos va incrementar en 1.
+En caso de que el árbol este vacío, la raíz se va a transformar en el nodo ingresado.
+El nodo ingresado quedará con un padre mayor o menor, siendo si es hijo derecho o izquierdo. Es decir, no se alterará la propiedad de árbol binario de busqueda.
+
+TArbolBB:
+
+insertar(nodo):
+	Si raiz = nulo 
+		raiz = nodo
+	Sino 
+		raiz.insertar(nodo)	
+	fin si 
+	devolver verdadero
+
+TElementoAB:
+
+insertar(nodo):
+	Si etiqueta = nodo.etiqueta 				O(1)
+		devolver falso					O(1)
+	Sino si etiqueta > nodo.etiqueta 			O(1)
+		Si hijoDer = nulo 				O(1)
+			hijoDer = nodo				O(1)
+		Sino 
+			devolver dijoDer.insertar(nodo)	O(n)
+		fin si
+	Sino 
+		Si hijoIzq = nulo 				O(1)
+			hijoIzq = nodo				O(1)
+		Sino 
+			devolver hijoIzq.insertar(nodo)	O(n)
+		fin si
+	fin si
+fin
+
+Tiempo de ejecución O(n)
+
+
+Ejercicio 2
+
+Cantidad de hojas
+
+Lenguaje natural: En caso de que la raíz sea diferente de nulo, el árbol binario llama al método cantidadHojas del elemento raíz. Este lo que hace es plantear el caso base de que si el hijo izquierdo y el hijo derecho son nulos, entonces es porque es una hoja y por ende devuelve 1. En caso de que ambos hijos no sean nulos, se realiza la llamada recursiva a estos hijos.
+
+Precondiciones:
+El árbol debe tener nodos hojas.
+El árbol no puede ser ciclico.
+
+Postcondiciones:
+No se altera el estado de ningún elemento del árbol.
+En caso de que solo haya una raíz devuelve 1.
+En caso de que sea vacío devuelve 0.
+
+TArbolBB:
+
+cantidadHojas():
+	Si raíz <> null 
+		raiz.cantidadHojas()
+	Sino 
+		devolver 0
+	fin si
+fin
+
+TElementoAB:
+
+cantidadHojas():
+	Si hijoDer y hijoIzq = nulo			O(1)
+		devolver 1					O(1)
+	fin Si
+
+	cant = 0						O(1)
+	
+	Si hijoDer <> nulo				O(1)
+		cant += hijoDer.cantidadHojas()	O(n)
+	fin Si
+
+	Si hijoIzq <> nulo				O(1)
+		cant += hijoIzq.cantidadHojas()	O(n)
+	fin Si
+
+	devolver cant					O(1)
+
+
+Tiempo de ejecución O(n)
+
+
+Ejercicio 3
+
+Suma de los elementos del árbol
+
+Lenguaje natural: En caso de que la raíz del árbol sea diferente de nulo, se llamará al método sumaElementos proveniente de la raiz. En caso de ser nulo, devolverá 0. Dentro del método sumaElementos, se irá acumulando el valor de la etiqueta del nodo actual con una variable suma, que representa la suma de todas las etiquetas, después se irá visitando a los nodos hijos de forma recursiva para acumular también sus etiquetas a la variable suma.
+
+Precondiciones:
+Los elementos ingresados en el árbol deben de tener etiqueta de tipo númerica.
+El arbol debe contener hojas.
+
+Postcondiciones:
+El árbol no debe de cambiar su estado anterior de entrar al método.
+
+
+TArbolBB:
+
+sumaElementos():
+	Si raiz = nulo
+		devolver 0
+	Sino
+		devolver raiz.sumaElementos()
+	fin Si
+fin
+
+
+TElementoAB:
+
+sumaElementos():
+	suma = suma + etiqueta					O(1)
+
+	Si hijoIzq <> nulo					O(1)
+		suma = suma + hijoIzq.sumaElementos()	O(n)
+	fin Si					
+
+	Si hijoDer <> nulo					O(1)
+		suma = suma + hijoDer.sumaElementos()	O(n)
+	fin Si
+	devolver suma						O(1)
+fin
+
+Tiempo de ejecución O(n)
+
+
+Ejercicio 4
+
+Nodos en nivel
+
+Lenguaje natural: Se observa que la raíz sea diferente de nulo para llamar a nodosNivel() con el parámetro númerico del nivel. Dentro de la función, se recorren recursivamente (en preorden) los nodos sumando en uno el contador de nivel y observando si es igual al nivel ingresado por parámetro. En caso de serlo suma en uno o dos el contador de nodos, 1 en caso de que solo tenga un hijo y 2 en caso de que contenga ambos hijos.
+
+Precondiciones:
+El árbol debe contener hojas.
+
+Postcondiciones:
+No se altera el estado de ningún elemento del árbol.
+
+TArbolBB:
+
+nodosNivel(n):
+	Si raiz <> nulo 
+		raiz.nodosNivel(n)
+	fin Si
+fin
+
+TElementoAB:
+
+nodosNivel(n):
+	int cantNodos					O(1)
+	int nivel++						O(1)
+	Si nivel = n-1					O(1)
+		Si hijoDer y hijoIzq <> nulo 		O(1)
+			cantNodos += 2			O(1)
+		Sino Si hijoDer o hijoIzq <> nulo 	O(1)
+			cantNodos += 1			O(1)
+		fin si
+	fin Si
+	Si hijoDer y hijoIzq <> nulo			O(1)
+		cantNodos += hijoDer.nodosNivel(n)	O(n)
+		cantNodos += hijoIzq.nodosNivel(n)	O(n)
+	fin Si
+
+	devolver cantNodos				O(1)
+
+Tiempo de ejecución O(n)
