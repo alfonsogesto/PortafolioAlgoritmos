@@ -1,0 +1,17 @@
+Ejercicio 2:
+quitaDeCola(unElemento)
+  si ( vector = -1 ) entonces
+      imprimir "Error: Cola está vacía"
+      devolver nulo
+  fin si
+
+  Elemento ← cola[vector]
+
+  si ( vector = fin ) entonces
+      vector ← -1
+      fin ← -1
+  sino
+      vector ← (vector + 1) % tamaño
+  fin si
+
+devolver Elemento

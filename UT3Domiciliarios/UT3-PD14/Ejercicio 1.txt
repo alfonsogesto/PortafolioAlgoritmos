@@ -1,0 +1,15 @@
+Ejercicio 1:
+ poneEnCola(unElemento)
+   si ( (fin + 1) % tamaño = vector ) entonces
+        imprimir "Error: Cola está llena"
+        devolver
+   fin si
+
+   si ( vector = -1 ) entonces
+      vector ← 0
+   fin si
+
+   fin ← (fin + 1) % tamaño
+   cola[fin] ← unElemento
+
+devolver unElemento
