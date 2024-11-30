@@ -1,0 +1,36 @@
+Primero, se procesa el texto para identificar las palabras y las páginas asociadas a cada una de ellas. Luego, cada palabra se inserta en el trie, este proceso implica recorrer cada letra de la palabra, navegando por los nodos existentes o creando nuevos nodos en caso de que no existan. Al llegar al nodo final que corresponderia a la última letra de la palabra, se añaden las páginas asociadas a esa palabra en dicho nodo. Este procedimiento se repite hasta que todas las palabras del texto hayan sido procesadas.
+
+Precondiciones:
+1.El texto está disponible en formato procesable.
+2.Las palabras y las páginas se pueden separar correctamente.
+
+Postcondiciones:
+1.Todas las palabras se insertan en el trie.
+2.Cada nodo terminal tiene asociadas las páginas correspondientes.
+
+Pseudocodigo:
+construirTrie()
+
+COM
+PARA CADA (palabra, paginas) en la lista
+        nodoActual ← nodoRaiz
+        PARA CADAletra en palabra
+            SI letra NO existe en nodoActual.hijos
+                crea nuevoNodo
+                nodoActual.hijos[letra] ← nuevoNodo
+            nodoActual ← nodoActual.hijos[letra]
+        FIN PARA
+        nodoActual.paginas ← paginas
+    FIN PARA
+
+    Retornar nodoRaiz
+FIN 
+
+
+
+Respuestas a las preguntas:
+1. El algoritmo realiza 8 comparaciones para Programa
+2. El algoritmo realiza 4 comparaciones para Proselitismo
+3. El algoritmo realiza 9 comparaciones para insertar Cazadores
+4. La altura del trie es 12 y palabra más larga Programación
+5. Elt amaño del trie depende del total de nodos únicos
