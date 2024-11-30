@@ -1,0 +1,27 @@
+UT2-PD4 Ej Libro
+
+5.20 Construya un ejemplo en el que una búsqueda por interpolación examine cada elemento de la matriz de entrada:
+
+-La búsqueda por interpolación lo que hace es predecir utilizar una fórmula de interpolación para estimar la posición del elemento buscado, para esto los elementos de la matriz de entrada tienen que ser como una sucesión, debe de haber una forma de calcular el elemento
+buscado, de lo contrario el algoritmo deberá examinar cada elemento de la matriz de entrada.
+
+Un ejemplo en el algoritmo debe examinar cada elemento de la matriz de entrada puede ser este:
+
+int[] arrayNums = {0,9990,45476,8477,354325}
+
+en este caso cada elemento no está definido por una regla explícita, por lo un algoritmo de interpolación no sería lo más eficiente.
+
+5.23
+
+a)el tiempo de ejecución de contains es O(n al cuadrado)
+b)Suponga que se tardan 4 segundos en ejecutar contains, con una matriz de 100 por 100. Asumiendo que los términos de menor orden sean despreciables,
+¿Cuánto se tardará en ejecutar contains para una matriz de 400 por 400?
+
+Teniendo como referencia a la matriz de 100 por 100, una matriz de 400 por 400 supondría aumentar la matriz en 4 veces, por lo que el aumento en el tiempo de ejecución sería de 4 ^ 2, o sea 16
+por ende 4 * 16 = 64.
+contains tardaría en ejecutarse aproximadamente 64 segundos.
+
+c)Suponga que escribimos de nuevo contains, de modo que el algoritmo realice una búsqueda binaria en cada fila, devolviendo un valor verdadero si cualquiera de las búsquedas por fila tiene éxito y falso en caso contrario
+¿Cuál será el tiempo de ejecución de esta versión revisada de contains?
+
+El tiempo de ejecución de la búsqueda binaria en cada fila va a ser de O(n *log n) 
