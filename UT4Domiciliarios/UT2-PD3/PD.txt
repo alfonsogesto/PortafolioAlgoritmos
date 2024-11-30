@@ -1,0 +1,76 @@
+5.4:
+
+Suponga que t1(N) = O(F(N)) y t2(N) = O(F(N))
+
+Cuáles de las siguientes afirmaciónes son ciertas?
+
+a: t1(N) + t2(N) = O(F(N))
+
+b: t1(N) - t2(N) = O(F(N))
+
+c: t1(N) / t2(N) = O(1) 
+
+d: t1(N) = O(t2(N))
+
+
+A-Correcto, si t1(N) = O(F(N)) y t2(N) = O(F(N)) entonces su suma también está acotada superiormente por F(N)
+
+B-Correcto, de la misma manera, su resta también está acotada superiormente por F(N)
+
+C-Incorrecto
+
+D-Incorrecto
+
+5.5:
+
+Resolver un problema requiere ejecutar un algoritmo de O(N) y después un segundo algoritmo O(N), cuál es el coste total de resolver el problema?
+
+Respuesta: El coste total es de resolver el problema es O(N)
+
+
+Un algoritmo requiere 0.4 ms para un tamaño de entrada de 100, ¿Cuánto tiempo requerirá para un tamaño de entrada igual a 500(suponiendo que los términos de menor orden sean despreciables) si el tiempo de ejecución es:
+
+a:Lineal
+
+b:O(N log N) 
+
+c:Cuadrático
+
+D:Cúbico
+
+
+5.13:
+
+Sumar dos enteros de N dígitos: O(n)
+
+Multiplicar dos enteros de N dígitos: O(N^2)
+
+
+5.14-
+
+Instrucción mas interna:
+
+maxSum = thisSum
+
+La instrucción mas interna se ejecuta n veces.
+
+
+Para 1000 elementos nuestro algoritmo tarda 10 segundos en ejecutarse en la maquina A, ahora sustituimos la maquina A por la máquina B que es 3 veces más rápida, aproximadamente, cuánto tiempo tardará el algoritmo en ejecutarse en la máquina B para 2500 elementos si el algoritmo es:
+
+a-Lineal
+
+b-Cuadrático
+
+c-O(N^3)
+
+d-O(N log N) 
+
+Un algoritmo requiere un tiempo de ejecución de 0,5ms para un tamaño de entrada igual a 100 ¿qué tamaño de problema puede resolverse en un minuto? si el algoritmo es
+
+a-lineal
+
+b-O(N log N)
+
+c-Cuadrático
+
+d-cúbico 
